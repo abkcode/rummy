@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rummy</title>
+    <link rel="stylesheet" href="assets/bulma-0.7.5/css/bulma.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <!-- <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script> -->
+  </head>
+
+  <body>
+    <section class="section" id="app">
+      <div class="container">
+        <div class="p-table">
+          <div class="p-hand-box p-hand-box-1">
+            <span style="color: #fff;padding: 1rem;">{{ player1.points }}</span>
+            <div class="p-hand">
+              <div
+                v-for="player1_card in player1.cards"
+                class="p-card"
+                :data-suit="player1_card.suit"
+                :data-rank="player1_card.rank"
+              >
+                <i></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-hand-box p-hand-box-2">
+            <span style="color: #fff;padding: 1rem;">{{ player2.points }}</span>
+            <div class="p-hand">
+              <div
+                v-for="player2_card in player2.cards"
+                class="p-card"
+                :data-suit="player2_card.suit"
+                :data-rank="player2_card.rank"
+              >
+                <i></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-hand-box p-hand-box-3">
+            <span style="color: #fff;padding: 1rem;">{{ player3.points }}</span>
+            <div class="p-hand">
+              <div
+                v-for="player3_card in player3.cards"
+                class="p-card"
+                :data-suit="player3_card.suit"
+                :data-rank="player3_card.rank"
+              >
+                <i></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-hand-box p-hand-box-4">
+            <span style="color: #fff;padding: 1rem;">{{ player4.points }}</span>
+            <div class="p-hand">
+              <div
+                v-for="player4_card in player4.cards"
+                class="p-card"
+                :data-suit="player4_card.suit"
+                :data-rank="player4_card.rank"
+              >
+                <i></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-zone-box">
+            <div class="p-zone">
+              <div class="p-card p-card-back"><i></i></div>
+			  <div class="p-card" data-suit="diams" data-rank="2"><i></i></div>
+			  <button class="button" v-on:click="calculatePoints(player4)">Calculate</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- <script src="jquery.min.js"></script> -->
+    <script src="vue.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

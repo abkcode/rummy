@@ -1,0 +1,181 @@
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+  background-color: #333;
+}
+.p-card {
+  display: inline-block;
+  width: 3.3em;
+  height: 4.6em;
+  border: 1px solid #ccc;
+  border-radius: 0.3em;
+  padding: 0.25em;
+  font-size: 1.2em;
+  /* font-family: Arial, sans-serif; */
+  background-color: #fff;
+  box-shadow: 0.2em 0.2em 0.5em #333;
+  margin-left: -2em;
+}
+
+.p-card[data-suit="spades"]:before {
+  color: #000;
+}
+.p-card[data-suit="clubs"]:before {
+  color: #000;
+}
+.p-card[data-suit="diams"]:before {
+  color: #f00;
+}
+.p-card[data-suit="hearts"]:before {
+  color: #f00;
+}
+.p-card[data-rank="2"]:before {
+  content: "2";
+}
+.p-card[data-rank="3"]:before {
+  content: "3";
+}
+.p-card[data-rank="4"]:before {
+  content: "4";
+}
+.p-card[data-rank="5"]:before {
+  content: "5";
+}
+.p-card[data-rank="6"]:before {
+  content: "6";
+}
+.p-card[data-rank="7"]:before {
+  content: "7";
+}
+.p-card[data-rank="8"]:before {
+  content: "8";
+}
+.p-card[data-rank="9"]:before {
+  content: "9";
+}
+.p-card[data-rank="10"]:before {
+  content: "10";
+}
+.p-card[data-rank="j"]:before {
+  content: "J";
+}
+.p-card[data-rank="q"]:before {
+  content: "Q";
+}
+.p-card[data-rank="k"]:before {
+  content: "K";
+}
+.p-card[data-rank="a"]:before {
+  content: "A";
+}
+.p-card i:before {
+  display: block;
+  line-height: 0.1em;
+}
+.p-card i:after {
+  float: right;
+  font-size: 2em;
+}
+.p-card[data-suit="spades"] i:before {
+  content: "\2660";
+  color: #000;
+}
+.p-card[data-suit="spades"] i:after {
+  content: "\2660";
+  color: #000;
+}
+.p-card[data-suit="clubs"] i:before {
+  content: "\2663";
+  color: #000;
+}
+.p-card[data-suit="clubs"] i:after {
+  content: "\2663";
+  color: #000;
+}
+.p-card[data-suit="diams"] i:before {
+  content: "\2666";
+  color: #f00;
+}
+.p-card[data-suit="diams"] i:after {
+  content: "\2666";
+  color: #f00;
+}
+.p-card[data-suit="hearts"] i:before {
+  content: "\2665";
+  color: #f00;
+}
+.p-card[data-suit="hearts"] i:after {
+  content: "\2665";
+  color: #f00;
+}
+.p-card[data-suit="joker"] {
+  margin-bottom: -2.5em;
+}
+.p-card[data-suit="joker"] i:before {
+  content: "JOKER";
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  float: left;
+  font-size: 0.6em;
+  margin-left: 0.3em;
+  color: #00f;
+}
+
+.p-card[data-suit="joker"] i:after {
+  content: "\2605";
+  color: #00f;
+  float: right;
+  font-style: normal;
+  font-size: 1.6em;
+  margin-top: 1em;
+}
+.p-card-back {
+  background-color: #333;
+}
+.p-hand .p-card:first-child {
+  margin-left: 0;
+}
+.p-hand-box {
+  position: absolute;
+}
+.p-hand-box-1 {
+  left: 0;
+  top: 10rem;
+  transform: rotate(90deg);
+}
+.p-hand-box-2 {
+  top: 2rem;
+  left: calc(50% - 9.9271875rem);
+}
+.p-hand-box-3 {
+  right: 0;
+  top: 10rem;
+  transform: rotate(-90deg);
+}
+.p-hand-box-4 {
+  top: 24rem;
+  left: calc(50% - 9.9271875rem);
+}
+.p-hand {
+  display: inline-block;
+}
+.p-table {
+  height: 32rem;
+  border-radius: 6rem;
+  background-color: green;
+}
+.p-zone-box {
+  display: flex;
+  justify-content: center;
+}
+
+.p-zone {
+  display: inline-block;
+  margin-top: 10em;
+}
+
+.p-zone .p-card {
+  margin-left: 0;
+}

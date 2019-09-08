@@ -1,0 +1,33 @@
+- decide css framework and build ui
+- deal cards
+- allow user to rearrange cards
+- mark pure sequence, impure sequence and allowed pairs
+- calculate points
+
+https://apkpure.com/rummyvilla-play-rummy-online/com.vcommission.rummyvilla
+
+- use this css
+https://selfthinker.github.io/CSS-Playing-Cards/#selected
+remove icons keep only one deck icon, put it on bottom right. increase font size of card
+use bulma and check css
+
+- card text 10 should use tall font
+- add inner shadow to card
+- make suit icon below number little bigger
+
+
+- identify pure
+ - can be sequence
+ - can be same rank and sane suit cards
+
+- consider each pure at at time
+ - remove pure from hand and check sequence and same rank
+ 
+- identify sequence
+- identify same rank cards
+
+- identify posible grouping
+ - one pure is must
+
+- caculate points of all groupped hand
+- choose best hand
