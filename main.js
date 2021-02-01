@@ -27,22 +27,22 @@ var app = new Vue({
     this.dealPlayerCards(this.player2.cards);
     this.dealPlayerCards(this.player3.cards);
     this.dealPlayerCards(this.player4.cards);
-    this.player4.cards[9].suit = "diams";
-    this.player4.cards[9].rank = 9;
-    this.player4.cards[10].suit = "diams";
-    this.player4.cards[10].rank = 10;
-    this.player4.cards[11].suit = "diams";
-    this.player4.cards[11].rank = 10;
-    this.player4.cards[12].suit = "diams";
-    this.player4.cards[12].rank = "j";
+    // this.player4.cards[9].suit = "diams";
+    // this.player4.cards[9].rank = 9;
+    // this.player4.cards[10].suit = "diams";
+    // this.player4.cards[10].rank = 10;
+    // this.player4.cards[11].suit = "diams";
+    // this.player4.cards[11].rank = 10;
+    // this.player4.cards[12].suit = "diams";
+    // this.player4.cards[12].rank = "j";
   },
   methods: {
     initDeck() {
-      this.deck = [];
-      this.resetDeck();
+      this.createDeck();
       this.shuffleDeck();
+      this.tmpCode();
     },
-    resetDeck() {
+    createDeck() {
       this.deck = [];
       for (let suit in this.suits) {
         for (let rank in this.ranks) {
@@ -99,24 +99,45 @@ var app = new Vue({
         }
       }
       obj.cards = cards;
+    },
+    tmpCode(){
+      let cards = [
+        { suit: "spades", rank: 5, index: 1 },
+        { suit: "spades", rank: 6, index: 2 },
+        { suit: "spades", rank: 7, index: 3 },
+        { suit: "hearts", rank: "a", index: 4 },
+        { suit: "hearts", rank: "a", index: 5 },
+        { suit: "hearts", rank: "a", index: 6 },
+        { suit: "diams", rank: 2, index: 7 },
+        { suit: "spades", rank: 3, index: 8 },
+        { suit: "diams", rank: 10, index: 9 },
+        { suit: "hearts", rank: 10, index: 10 },
+        { suit: "hearts", rank: 9, index: 11 },
+        { suit: "diams", rank: 9, index: 12 },
+        { suit: "spades", rank: 9, index: 13 }
+      ];
+      
+      let pureGroups = this.identifyPureGroup(cards);
+      console.log(pureGroups);
+    },
+    identifyPureGroup(cards) {
+      return [
+        [
+          { suit: "spades", rank: 5, index: 1 },
+          { suit: "spades", rank: 6, index: 2 },
+          { suit: "spades", rank: 7, index: 3 }
+        ],
+        [
+          { suit: "hearts", rank: "a", index: 4 },
+          { suit: "hearts", rank: "a", index: 5 },
+          { suit: "hearts", rank: "a", index: 6 }
+        ]
+      ];
     }
   }
 });
 
-function identifyPureGroup(cards) {
-  return [
-    [
-      { suit: "spades", rank: 5, index: 1 },
-      { suit: "spades", rank: 6, index: 2 },
-      { suit: "spades", rank: 7, index: 3 }
-    ],
-    [
-      { suit: "hearts", rank: "a", index: 4 },
-      { suit: "hearts", rank: "a", index: 5 },
-      { suit: "hearts", rank: "a", index: 6 }
-    ]
-  ];
-}
+
 
 function identifyGroup(cards, i) {
   if (i == 0) {
@@ -153,37 +174,21 @@ function identifyGroup(cards, i) {
   }
 }
 
-var cards = [
-  { suit: "spades", rank: 5, index: 1 },
-  { suit: "spades", rank: 6, index: 2 },
-  { suit: "spades", rank: 7, index: 3 },
-  { suit: "hearts", rank: "a", index: 4 },
-  { suit: "hearts", rank: "a", index: 5 },
-  { suit: "hearts", rank: "a", index: 6 },
-  { suit: "diams", rank: 2, index: 7 },
-  { suit: "spades", rank: 3, index: 8 },
-  { suit: "diams", rank: 10, index: 9 },
-  { suit: "hearts", rank: 10, index: 10 },
-  { suit: "hearts", rank: 9, index: 11 },
-  { suit: "diams", rank: 9, index: 12 },
-  { suit: "spades", rank: 9, index: 13 }
-];
 
-var pureGroups = identifyPureGroup(cards);
 
-for (let i = 0; i < pureGroups.length; i++) {
-  var tmpCards = cards;
-  for (let j = 0; j < pureGroups[i].length; j++) {
-    tmpCards = tmpCards.filter(function(obj) {
-      return obj.index !== pureGroups[i][j].index;
-    });
-  }
-  console.log(tmpCards);
+// for (let i = 0; i < pureGroups.length; i++) {
+//   var tmpCards = cards;
+//   for (let j = 0; j < pureGroups[i].length; j++) {
+//     tmpCards = tmpCards.filter(function(obj) {
+//       return obj.index !== pureGroups[i][j].index;
+//     });
+//   }
+//   console.log(tmpCards);
 
-  var groups = identifyGroup(tmpCards, i);
+//   var groups = identifyGroup(tmpCards, i);
 
-  break;
-}
+//   break;
+// }
 
 // seq: [
 //   [
